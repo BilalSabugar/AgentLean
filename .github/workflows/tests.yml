@@ -46,7 +46,7 @@ jobs:
       - run: python scripts/release_check.py release-dist
       - run: python scripts/release_check.py source-wheel
       - run: python scripts/prepare_source.py --output release-source/agentlean-source.zip
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: agentlean-release-candidate
           path: |
