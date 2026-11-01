@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a reproducible failure in AgentLean.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not post vulnerabilities, credentials or private logs here. Read SECURITY.md for private reports.
+  - type: input
+    id: version
+    attributes:
+      label: AgentLean and Python versions
+      description: Include the native client version if this concerns model launching.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Operating system and installation method
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide a small sanitized example and the exact command. Explain which file is needed without uploading private project data.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Relevant error excerpt
+      description: Redact personal paths, credentials and account details. Keep full private logs local.
+      render: text

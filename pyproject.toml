@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentlean"
+dynamic = ["version"]
+description = "Portable agent workflows and honest efficiency measurements"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = []
+authors = [{name = "Bilal Sabugar"}]
+maintainers = [{name = "Bilal Sabugar", email = "bilal.07.04.07@gmail.com"}]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = ["build>=1.2", "setuptools>=77", "twine>=6", "ruff>=0.9", "coverage>=7.6", "PyYAML>=6"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = ["codex-engineering-efficiency-v2", ".verification-deps", ".verification-install", ".release-check", "build", "dist", "release-dist"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B"]
+
+[tool.coverage.run]
+source = ["agentlean"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.setuptools.dynamic]
+version = {attr = "agentlean.__version__"}
+
+[project.scripts]
+agentlean = "agentlean.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["agentlean*"]
+
+[tool.setuptools.package-data]
+agentlean = ["templates/*.md"]

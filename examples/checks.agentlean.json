@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "checks": [
+    {
+      "name": "compile runtime modules",
+      "argv": ["{python}", "-m", "compileall", "-q", "agentlean"],
+      "timeout_seconds": 30
+    },
+    {
+      "name": "behavioral regression suite",
+      "argv": ["{python}", "-m", "unittest", "discover", "-s", "tests", "-v"],
+      "timeout_seconds": 120
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+include LICENSE README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md
+include NOTICE.md MAINTAINERS.md GOVERNANCE.md CODE_OF_CONDUCT.md SUPPORT.md AGENTS.md
+include .editorconfig .gitattributes .gitignore
+recursive-include .github *.md *.yml *.yaml
+recursive-include docs *.md
+exclude docs/agent-handoff.md
+recursive-include tests *.py *.md
+recursive-include scripts *.py *.md
+recursive-include examples *.md *.json
+include agentlean/README.md
+recursive-include agentlean/templates *.md
+prune .verification-deps
+prune .verification-install
+prune .release-check
+prune codex-engineering-efficiency-v2
+global-exclude __pycache__ *.py[cod]

@@ -1,0 +1,21 @@
+name: Usage question
+description: Ask a focused question after checking the guides.
+title: "[Question]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check SUPPORT.md and docs/troubleshooting.md first. Keep credentials, account details and private logs out of this public form.
+  - type: textarea
+    id: question
+    attributes:
+      label: What are you trying to do?
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What guide and command did you try?
+      description: Include AgentLean/Python versions and a small sanitized example.
+    validations:
+      required: true
